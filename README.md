@@ -4,4 +4,4 @@ The Vundle website:  https://github.com/VundleVim/Vundle.vim
 
 usage: git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-Then copy the  ".vimre"  file to your local  "~/.vimrc"  file.
+Then copy the  ".vimrc"  file to your local  "~/.vimrc"  file.
