@@ -1,5 +1,5 @@
 # vim
-Configure my vim use " Vundle" Plug-in Manager in ubuntu.
+Configure my vim use " Vundle" Plug-in Manager.
 
 The Vundle website:  https://github.com/VundleVim/Vundle.vim
 
