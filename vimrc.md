@@ -58,8 +58,8 @@ func SetTitle()
 	call setline(8, "File Name: ".expand("%:t"))
 
 	call setline(9, "")
-
-        call setline(10, "Author: hyt")
+	
+	call setline(10, "Author: hyt")
 
 	call setline(11, "")
 
