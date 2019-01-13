@@ -1,6 +1,49 @@
-filetype plugin indent on    " required"
+func SetTitle()
 
-func SetComment()
+    if &filetype == 'sh'
+	call setline(1,"#!/bin/sh")
+
+	call setline(2,"")
+
+	call setline(3, ":<<!") 
+
+	call setline(4, "Copyright (C) ".strftime("%Y")." Topotek Ltd. All rights reserved.")
+
+	call setline(5, "")
+
+	call setline(6, "Mail: hyt.lyy@gmail.com") 
+
+	call setline(7, "")
+
+	call setline(8, "File Name: ".expand("%:t"))
+
+	call setline(9, "")
+
+        call setline(10, "Author: hyt")
+
+	call setline(11, "")
+
+	call setline(12, "Created Time: ".strftime("%c")) 
+
+	call setline(13, "")
+
+	call setline(14, "Description: ") 
+
+	call setline(15, "")
+
+	call setline(16, "!")
+
+	call setline(17, "")
+
+	call setline(18, "")
+
+	normal G
+
+    elseif &filetype == 'python'
+
+        call setline(1, "#!/usr/bin/env python3")
+
+        call setline(2, "# -*- coding: utf-8 -*-")
 
 	call setline(3, "'''") 
 
@@ -35,31 +78,29 @@ func SetComment()
 	call setline(18, "")
 
 	normal G
-	
-endfunc
-
-func SetTitle()
-
-    if &filetype == 'sh'
-	call setline(1,"#!/usr/bin/sh")
-
-	call setline(2,"")
-
-	call SetComment()
-
-    elseif &filetype == 'python'
-
-        call setline(1, "#!/usr/bin/env python3")
-
-        call setline(2, "# -*- coding: utf-8 -*-")
-
-	call SetComment()
 
     endif
 
 endfunc  
 
 autocmd BufNewFile *.c,*.py,*.sh exec ":call SetTitle()"  
+
+" ------------------- configure of YouCompleteMe -------------------
+
+"call youcompleteme#GetErrorCount()
+"call youcompleteme#GetWarningCount()
+
+let g:ycm_log_level = 'info'
+let g:ycm_auto_trigger = 1
+let g:ycm_enable_diagnostic_signs = 1
+let g:ycm_enable_diagnostic_highlighting = 1
+let g:ycm_echo_current_diagnostic = 1
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '>*'
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+let g:ycm_semantic_triggers =  {'python':['.']}
+
+
 
 set noswapfile                " I don't like swap file
 
@@ -86,6 +127,9 @@ set ignorecase
 " About Indent
 set autoindent
 set cindent
+
+" 解决插入模式下delete/backspce键失效问题
+set backspace=2
 
 " About NREDtree
 " autocmd vimenter * NERDTree
